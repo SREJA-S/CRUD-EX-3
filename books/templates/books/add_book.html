@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Book</title>
+</head>
+<body>
+    <h1>Add New Book</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        Title:
+        <input type="text" name="title" required>
+        <br><br>
+
+        Author:
+        <input type="text" name="author" required>
+        <br><br>
+
+        Price:
+        <input type="number" name="price" min="0" required>
+        <br><br>
+
+        <button type="submit">Add Book</button>
+    </form>
+
+    <a href="{% url 'book_list' %}">Back to Books</a>
+</body>
+</html>
